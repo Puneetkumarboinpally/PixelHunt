@@ -3,7 +3,7 @@ import themeReducer from "../features/themeSlice";
 
 export const store = configureStore({
   reducer: {
-    darkMode: themeReducer,
+    theme: themeReducer,
   },
 });
 
