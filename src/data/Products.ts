@@ -1,7 +1,7 @@
 type CollectionStructure = {
   img: string;
 };
-export type CarouselItem = {
+export type Course = {
   id: number;
   image: string;
   title: string;
@@ -47,46 +47,68 @@ export const Collections: CollectionStructure[] = [
   },
 ];
 
-export const carouselData: CarouselItem[] = [
+export const courses: Course[] = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
-    title: "Modern Workspace",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    title: "Web Development",
     description:
-      "Create a productive environment with a clean and modern workspace.",
+      "Learn HTML, CSS, JavaScript and build modern responsive websites from scratch.",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
-    title: "Cozy Living",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+    title: "React.js",
     description:
-      "Transform your living space into a comfortable and welcoming home.",
+      "Build interactive web applications using React, components, hooks and state management.",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
-    title: "Interior Design",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+    title: "UI/UX Design",
     description:
-      "Discover inspiring interiors designed with style and functionality.",
+      "Learn the fundamentals of user interface and user experience design for modern products.",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
-    title: "Elegant Spaces",
-    description: "Bring elegance and character to every corner of your home.",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    title: "Python Programming",
+    description:
+      "Master Python fundamentals and learn how to create useful applications and automation.",
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1615874694520-474822394e73",
-    title: "Natural Comfort",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    title: "Data Analytics",
     description:
-      "Combine natural materials and warm tones for a relaxing atmosphere.",
+      "Learn how to analyze data, create visualizations and discover meaningful insights.",
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1617104678098-de229db51175",
-    title: "Minimal Style",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+    title: "Cloud Computing",
     description:
-      "Keep things simple with a minimalist approach to modern interiors.",
+      "Understand cloud technologies, deployment and the fundamentals of modern cloud infrastructure.",
+  },
+  {
+    id: 7,
+    image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28",
+    title: "TypeScript",
+    description:
+      "Learn type-safe JavaScript with TypeScript and build more reliable modern applications.",
+  },
+  {
+    id: 8,
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+    title: "Machine Learning",
+    description:
+      "Explore machine learning concepts and learn how to build intelligent data-driven applications.",
+  },
+  {
+    id: 9,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    title: "Digital Marketing",
+    description:
+      "Learn SEO, social media, content marketing and strategies for growing an online business.",
   },
 ];
