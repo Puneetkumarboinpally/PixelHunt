@@ -1,11 +1,9 @@
-import Carousel from "../components/Carousel";
-import Marquee from "../components/Marquee";
+import ImageSlider from "../components/ImageSlider";
 
 const HomePage = () => {
   return (
     <div className="min-h-screen">
-      <Marquee />
-      <Carousel />
+      <ImageSlider />
     </div>
   );
 };
