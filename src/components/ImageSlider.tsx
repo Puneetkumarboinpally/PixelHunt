@@ -27,29 +27,40 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-[calc(100vh-4rem)] overflow-hidden">
+      {/* Slider track */}
       <div
-        className="flex transition-transform duration-500 ease-out"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        className="flex h-full transition-transform duration-500 ease-in-out"
+        style={{
+          transform: `translateX(-${currentSlide * 100}%)`,
+        }}
       >
         {bannerMovies.map((movie) => (
           <div key={movie.id} className="h-full w-full shrink-0">
-            <div className="relative">
+            <div className="relative h-full w-full">
               <img
                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                 alt={movie.title}
                 className="h-full w-full object-cover"
               />
-              <div></div>
             </div>
           </div>
         ))}
       </div>
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2">
-        <button onClick={prevSlide}>
+
+      {/* Buttons */}
+      <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2">
+        <button
+          onClick={prevSlide}
+          className="p-1 bg-white/10 font-bold text-white rounded active:scale-95"
+        >
           <ChevronLeft />
         </button>
-        <button onClick={nextSlide}>
+
+        <button
+          onClick={nextSlide}
+          className="p-1 bg-white/10 font-bold text-white rounded active:scale-95"
+        >
           <ChevronRight />
         </button>
       </div>

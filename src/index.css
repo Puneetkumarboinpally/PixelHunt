@@ -10,6 +10,9 @@ body {
   min-height: 100vh;
   padding: 2rem;
 }
+button {
+  cursor: pointer;
+}
 :root {
   /* Brand */
   --color-primary: #3b82f6;
