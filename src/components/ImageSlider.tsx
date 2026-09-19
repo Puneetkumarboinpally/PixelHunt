@@ -14,6 +14,15 @@ const ImageSlider = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) =>
+        prev === bannerMovies.length - 1 ? 0 : prev + 1,
+      );
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [bannerMovies.length]);
+
   const prevSlide = () => {
     setCurrentSlide((prev) =>
       prev === 0 ? bannerMovies.length - 1 : prev - 1,
@@ -52,14 +61,14 @@ const ImageSlider = () => {
       <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2">
         <button
           onClick={prevSlide}
-          className="p-1 bg-white/10 font-bold text-white rounded active:scale-95"
+          className="p-1 bg-red-500 font-bold text-white rounded active:scale-95"
         >
           <ChevronLeft />
         </button>
 
         <button
           onClick={nextSlide}
-          className="p-1 bg-white/10 font-bold text-white rounded active:scale-95"
+          className="p-1 bg-red-500 font-bold text-white rounded active:scale-95"
         >
           <ChevronRight />
         </button>
