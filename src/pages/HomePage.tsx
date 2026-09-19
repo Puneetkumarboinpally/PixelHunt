@@ -1,9 +1,11 @@
 import ImageSlider from "../components/ImageSlider";
+import TrendingMoviesThisWeek from "../components/TrendingMoviesThisWeek";
 
 const HomePage = () => {
   return (
-    <div >
+    <div>
       <ImageSlider />
+      <TrendingMoviesThisWeek />
     </div>
   );
 };
