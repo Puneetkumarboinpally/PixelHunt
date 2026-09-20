@@ -1,40 +1,40 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import { trendingMovies } from "../api/tmdb";
+import { trendingSeries } from "../api/tmdb";
 import type { Movie } from "../types/movie";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const TrendingMoviesThisWeek = () => {
-  const [trendingHomeMovies, setTrendingHomeMovies] = useState<Movie[]>([]);
+const TrendingSeries = () => {
+  const [trendingHomeSeries, setTrendingHomeSeries] = useState<Movie[]>([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const prevSlide = () => {
     setCurrentSlide((prev) =>
-      prev === 0 ? trendingHomeMovies.length - 1 : prev - 1,
+      prev === 0 ? trendingHomeSeries.length - 1 : prev - 1,
     );
   };
 
   const nextSlide = () => {
     setCurrentSlide((prev) =>
-      prev === trendingHomeMovies.length - 1 ? 0 : prev + 1,
+      prev === trendingHomeSeries.length - 1 ? 0 : prev + 1,
     );
   };
 
   useEffect(() => {
-    trendingMovies().then((data) => setTrendingHomeMovies(data.results));
+    trendingSeries().then((data) => setTrendingHomeSeries(data.results));
   }, []);
 
   return (
     <div className="h-60vh mt-15 p-4">
       <h2 className="text-2xl font-bold text-text mb-8">
-        TRENDING MOVIES THIS WEEK
+        TRENDING TV SERIES THIS WEEK
       </h2>
       <div className="relative overflow-hidden">
         <div
           className="flex gap-4 transition-transform duration-500"
           style={{ transform: `translateX(-${currentSlide * 256}px)` }}
         >
-          {trendingHomeMovies.map((movie) => (
+          {trendingHomeSeries.map((movie) => (
             <Card key={movie.id} movie={movie} />
           ))}
         </div>
@@ -69,4 +69,4 @@ const TrendingMoviesThisWeek = () => {
   );
 };
 
-export default TrendingMoviesThisWeek;
+export default TrendingSeries;
