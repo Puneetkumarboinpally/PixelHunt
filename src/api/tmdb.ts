@@ -22,5 +22,52 @@ const heroMovies = async (): Promise<MovieReference> => {
     throw error;
   }
 };
+export const trendingMovies = async (): Promise<MovieReference> => {
+  try {
+    const response = await fetch(
+      "https://api.themoviedb.org/3/trending/movie/week",
+      {
+        headers: {
+          authorization: `Bearer ${Token}`,
+          accept: "application/json",
+        },
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error("failed to fetch hero images");
+    }
+    const data: MovieReference = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const trendingSeries = async (): Promise<MovieReference> => {
+  try {
+    const response = await fetch(
+      "https://api.themoviedb.org/3/trending/tv/week",
+      {
+        headers: {
+          authorization: `Bearer ${Token}`,
+          accept: "application/json",
+        },
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error("failed to fetch hero images");
+    }
+    const data: MovieReference = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
 
 export default heroMovies;

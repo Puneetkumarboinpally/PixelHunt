@@ -6,7 +6,7 @@ type MoviesProps = {
 const Card = ({ movie }: MoviesProps) => {
   return (
     <div className="h-80 w-60 shrink-0">
-      <div className="relative h-full w-full overflow-hidden rounded-lg">
+      <div className="relative h-full w-full overflow-hidden rounded">
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
